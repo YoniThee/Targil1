@@ -5,11 +5,15 @@ import java.util.Arrays;
 public class SeasonUtil {
     public static final Season[] SEASONS = Season.values();
     public static void sortSeasonable(Comparable[] seasonables) {
-        // TODO: Implement.
+            Arrays.sort(seasonables);
     }
 
     static String reportAll(Seasonable[] seasonables) {
-        // TODO: Implement.
-        return null;
+        String ans = "";
+        for (Seasonable item: seasonables) {
+            ans += item.toString();
+            ans += '\n';
+        }
+        return ans;
     }
 }

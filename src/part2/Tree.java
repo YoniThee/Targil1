@@ -13,7 +13,7 @@ public abstract class Tree implements Seasonable,Comparable<Tree>{
 
     @Override
     public int compareTo(Tree tree) {
-        return height == tree.height ? 1 : 0;
+        return Integer.compare(height, tree.height);
     }
 
     @Override

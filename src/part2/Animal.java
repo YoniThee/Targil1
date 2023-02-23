@@ -13,7 +13,7 @@ public abstract class Animal implements Seasonable, Comparable<Animal> {
 
     @Override
     public int compareTo(Animal animal) {
-        return weight == animal.weight ? 1 : 0;
+        return Integer.compare(weight, animal.weight);
     }
 
     @Override

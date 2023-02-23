@@ -5,18 +5,25 @@ public class Caribou extends Animal {
     String migratingDir;
 
     Caribou(int weight, Season season) {
-        super(0, null, null);
+        super(weight, season, Color.BROWN);
         migratingDir = "";
+        changeSeason(season);
     }
     public void changeSeason(Season season) {
         switch (season){
-            case WINTER -> {
+            case WINTER:
                 color = Color.WHITE;
                 migratingDir = "south";
-            }
-            case SPRING -> color = Color.BROWN;
-            case SUMMER -> migratingDir = "north";
-            case FALL -> weight *= 1.25;
+                break;
+            case SPRING:
+                color = Color.BROWN;
+                break;
+            case SUMMER:
+                migratingDir = "north";
+                break;
+            case FALL:
+                weight *= 1.25;
+                break;
         }
     }
 
@@ -30,9 +37,47 @@ public class Caribou extends Animal {
         if (migratingDir != "")
             return "Caribou: I am migrating " + migratingDir +
                     ". My weight is: " + weight +
-                    "and my color is: " + color;
+                    " and my color is: " + color.name();
         return "Caribou: " +
                 "My weight is: " + weight +
-                "and my color is: " + color;
+                " and my color is: " + color.name();
     }
 }
+
+//public class Caribou extends Animal {
+//
+//    String migratingDir;
+//
+//    Caribou(int weight, Season season) {
+//        super(weight, season, Color.BROWN);
+//        migratingDir = "";
+//        changeSeason(season);
+//    }
+//    public void changeSeason(Season season) {
+//        switch (season){
+//            case WINTER -> {
+//                color = Color.WHITE;
+//                migratingDir = "south";
+//            }
+//            case SPRING -> color = Color.BROWN;
+//            case SUMMER -> migratingDir = "north";
+//            case FALL -> weight *= 1.25;
+//        }
+//    }
+//
+//    @Override
+//    public Season getCurrentSeason() {
+//        return season;
+//    }
+//
+//    @Override
+//    public String toString() {
+//        if (migratingDir != "")
+//            return "Caribou: I am migrating " + migratingDir +
+//                    ". My weight is: " + weight +
+//                    " and my color is: " + color.name();
+//        return "Caribou: " +
+//                "My weight is: " + weight +
+//                " and my color is: " + color.name();
+//    }
+//}
