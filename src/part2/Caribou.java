@@ -1,5 +1,6 @@
 package part2;
 
+
 public class Caribou extends Animal {
 
     String migratingDir;
@@ -7,9 +8,12 @@ public class Caribou extends Animal {
     Caribou(int weight, Season season) {
         super(weight, season, Color.BROWN);
         migratingDir = "";
-        changeSeason(season);
     }
-    public void changeSeason(Season season) {
+
+
+    @Override
+    public void changeSeason() {
+        super.changeSeason();
         switch (season){
             case WINTER:
                 color = Color.WHITE;
@@ -27,10 +31,12 @@ public class Caribou extends Animal {
         }
     }
 
+
     @Override
     public Season getCurrentSeason() {
         return season;
     }
+
 
     @Override
     public String toString() {
@@ -43,41 +49,3 @@ public class Caribou extends Animal {
                 " and my color is: " + color.name();
     }
 }
-
-//public class Caribou extends Animal {
-//
-//    String migratingDir;
-//
-//    Caribou(int weight, Season season) {
-//        super(weight, season, Color.BROWN);
-//        migratingDir = "";
-//        changeSeason(season);
-//    }
-//    public void changeSeason(Season season) {
-//        switch (season){
-//            case WINTER -> {
-//                color = Color.WHITE;
-//                migratingDir = "south";
-//            }
-//            case SPRING -> color = Color.BROWN;
-//            case SUMMER -> migratingDir = "north";
-//            case FALL -> weight *= 1.25;
-//        }
-//    }
-//
-//    @Override
-//    public Season getCurrentSeason() {
-//        return season;
-//    }
-//
-//    @Override
-//    public String toString() {
-//        if (migratingDir != "")
-//            return "Caribou: I am migrating " + migratingDir +
-//                    ". My weight is: " + weight +
-//                    " and my color is: " + color.name();
-//        return "Caribou: " +
-//                "My weight is: " + weight +
-//                " and my color is: " + color.name();
-//    }
-//}
