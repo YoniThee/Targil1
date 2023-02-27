@@ -1,5 +1,4 @@
 package part2;
-
 public abstract class Tree implements Seasonable,Comparable<Tree>{
     int height;
     Color leavesColor;

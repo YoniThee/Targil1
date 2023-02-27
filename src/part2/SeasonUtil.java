@@ -6,7 +6,7 @@ import java.util.Arrays;
 public class SeasonUtil {
     public static final Season[] SEASONS = Season.values();
     public static void sortSeasonable(Comparable[] seasonables) {
-            Arrays.sort(seasonables);
+        Arrays.sort(seasonables);
     }
 
 
@@ -16,6 +16,6 @@ public class SeasonUtil {
             ans += item.toString();
             ans += '\n';
         }
-        return ans;
+        return ans.substring(0,ans.length()-1);
     }
 }

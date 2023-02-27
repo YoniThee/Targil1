@@ -1,6 +1,4 @@
 package part2;
-
-
 public class Caribou extends Animal {
 
     String migratingDir;
@@ -21,12 +19,13 @@ public class Caribou extends Animal {
                 break;
             case SPRING:
                 color = Color.BROWN;
+                migratingDir = "";
                 break;
             case SUMMER:
                 migratingDir = "north";
                 break;
             case FALL:
-                weight *= 1.25;
+                migratingDir = "";
                 break;
         }
     }

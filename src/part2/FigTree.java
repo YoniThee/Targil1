@@ -1,13 +1,14 @@
 package part2;
 
-
 public class FigTree extends Tree{
 
     boolean fruit;
+    boolean leaves;
 
     FigTree(int height, Season season) {
         super(height, season, Color.YELLOW);
         fruit = false;
+        leaves = true;
     }
 
 
@@ -18,10 +19,13 @@ public class FigTree extends Tree{
             case WINTER:
                 height += 20;
                 leavesColor = Color.BROWN;
+                leaves = false;
                 break;
             case SPRING:
                 height += 30;
                 leavesColor = Color.GREEN;
+                leaves = true;
+
                 break;
             case SUMMER:
                 height += 30;
@@ -45,13 +49,18 @@ public class FigTree extends Tree{
 
     @Override
     public String toString() {
+        if (!leaves)
+            return "Fig tree. " +
+                    "My height is: " + height +
+                    " and I have no leaves";
         if (!fruit)
             return "Fig tree. " +
                     "My height is: " + height +
                     " and my color is: " + leavesColor.name();
 
-        return "Fig tree. I have no leaves. " +
+        return "Fig tree. I give fruit. " +
                 "My height is: " + height +
                 " and my color is: " + leavesColor.name();
+
     }
 }

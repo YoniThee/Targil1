@@ -1,6 +1,4 @@
 package part2;
-
-
 public class OliveTree extends Tree {
 
     boolean fruit;

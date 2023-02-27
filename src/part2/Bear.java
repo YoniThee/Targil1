@@ -1,5 +1,3 @@
-package part2;
-
 import java.lang.Math;
 
 public class Bear extends Animal {
@@ -17,17 +15,18 @@ public class Bear extends Animal {
         super.changeSeason();
         switch (season){
             case WINTER:
-                weight *= 0.8;
+                weight = (int)Math.round(weight * 0.8);
                 sleeping = true;
                 break;
             case SPRING:
-                weight *= 0.75;
+                weight = (int)Math.round(weight * 0.75);
+                sleeping = false;
                 break;
             case SUMMER:
-                weight *= 1.33;
+                weight = (int)Math.round(weight * 1.33333);
                 break;
             case FALL:
-                weight *= 1.25;
+                weight = (int)Math.round(weight * 1.25);
                 break;
         }
     }
